@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credible Techno Consultants</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>
+        // JavaScript function to show selected tab content
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Remove 'active' class from all links
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show the selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+
+            // Add 'active' class to the clicked link
+            const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+
+        (function () {
+            emailjs.init({
+                publicKey: "86wkkSArTkbRlG3O1",
+            });
+        })();
+
+        // Form submission handler
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form from submitting the usual way
+
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const profession = document.getElementById('profession').value;
+            const interest = document.getElementById('interest').value;
+            const contact = document.getElementById('contact').value;
+            const email = document.getElementById('email').value;
+            const website = document.getElementById('website').value;
+            const query = document.getElementById('query').value;
+
+            const templateParams = {
+                from_name: name,
+                company: company,
+                profession: profession,
+                interest: interest,
+                contact_number: contact,
+                from_email: email,
+                website: website,
+                message: query
+            };
+
+            // Send the email using EmailJS
+            emailjs.send('service_w5lswys', 'template_koexz18', templateParams)
+                .then(function (response) {
+                    const statusEl = document.getElementById('status');
+                    statusEl.textContent = 'We will contact you Shortly!';
+                    statusEl.classList.remove('error');
+                    statusEl.classList.add('success');
+                }, function (error) {
+                    const statusEl = document.getElementById('status');
+                    statusEl.textContent = 'Failed to send message. Please try again.';
+                    statusEl.classList.remove('success');
+                    statusEl.classList.add('error');
+                });
+        }
+
+        // Show the home section by default when the page loads
+        window.onload = function () {
+            showSection('home');
+        };
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Credible Techno Consultants</h1>
+        <p>Telecom & Management Consultant</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#challenges" onclick="showSection('challenges')">Challenges</a></li>
+            <li><a href="#experience" onclick="showSection('experience')">Experience</a></li>
+            <li><a href="#rd-products" onclick="showSection('rd-products')">R&D and Products</a></li>
+            <li><a href="#clients-associates" onclick="showSection('clients-associates')">Clients & Associates</a></li>
+            <li><a href="#about" onclick="showSection('about')">About Us</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h2>The Evolving Telecom Scenario</h2>
+            <img src="home.jpg" alt="Home Section Image" />
+            <p>Over the last decades, the number of telecom services and users across the world has grown exponentially.
+                The network infrastructures that support them are built on traditional telecommunications models, where
+                network operators define node-level requirements and vendors create accordingly. This methodology has
+                worked well so far.</p>
+
+            <p>However, the telecom landscape is rapidly changing, driven by technological advancements and increased
+                consumer demand for high-speed connectivity. With the rollout of 5G, IoT, and AI integration, telecom
+                operators are facing new challenges that require innovative solutions. At Credible Techno Consultants,
+                we specialize in providing strategic consulting services to help businesses navigate these changes.</p>
+
+            <p>Our expert team provides insights and solutions tailored to improve operational efficiency, reduce costs,
+                and optimize network performance. We focus on end-to-end services, from network design to ongoing
+                support, ensuring that our clients are always ahead of the curve.</p>
+
+            <p>Let us be your partner in shaping the future of telecommunications. Explore how we can help you with
+                cutting-edge strategies to meet the demands of tomorrow.</p>
+        </section>
+
+        <!-- Challenges Section -->
+        <section id="challenges">
+            <h2>Major Threats & Key Issues</h2>
+            <img src="./challenges.jpg" alt="Home Section Image" />
+            <ul>
+                <li>Spectrum Allotment</li>
+                <li>Alternative Technology - 4G</li>
+                <li>Change in tariff</li>
+                <li>Government policies to be implemented at short notice</li>
+                <li>Fibre capacity of existing network</li>
+                <li>Fibre Penetration for Broadband Quality of Service and Content transport</li>
+            </ul>
+
+            <h2>Major Challenges and Probable Solutions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Major Challenge</th>
+                        <th>Probable Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Very high OF Cable cuts</td>
+                        <td>Lease from multiple operators/IP1 service providers to mitigate risk and better QoS.</td>
+                    </tr>
+                    <tr>
+                        <td>Execution inefficiency during network expansion</td>
+                        <td>Project Management Counseling and Audit of existing processes.</td>
+                    </tr>
+                    <tr>
+                        <td>Inefficient Network Design & Planning leads to sub-optimal usage of the Network</td>
+                        <td>Audit and vetting of network design & planning.</td>
+                    </tr>
+                    <tr>
+                        <td>Insufficient Monitoring/Analysis of Network for Faults and Performance</td>
+                        <td>Simple Software based monitoring, tracking, and analysis services.</td>
+                    </tr>
+                    <tr>
+                        <td>Obsolete/multi-stack equipment leading to high OPEX</td>
+                        <td>Network transformation & Optimization.</td>
+                    </tr>
+                    <tr>
+                        <td>Operating skill-set not appropriate</td>
+                        <td>Selection and skill enhancement.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Telecom Experience</h2>
+            <img src="./experiences.jpg" alt="Home Section Image" />
+            <p>At Credible Techno Consultants, we pride ourselves on the extensive experience of our team. Our
+                consultants have worked across a variety of sectors within the telecom industry, providing solutions to
+                both established players and emerging start-ups.</p>
+
+            <ul>
+                <li><strong>Arvind Kansal:</strong> A veteran in the industry with over 20 years of experience in
+                    network optimization and telecom infrastructure development.</li>
+                <li><strong>BP Saxena:</strong> An expert in digital transformation, helping businesses transition to
+                    modern telecom technologies.</li>
+                <li><strong>MK Math:</strong> Specialized in project management and network audits for leading telecom
+                    service providers in India and abroad.</li>
+                <li><strong>Tarun Yadav:</strong> Focused on fibre optic technology and broadband services, with
+                    extensive experience in deployment strategies.</li>
+                <li><strong>Sanjay Kumar Chitrakar:</strong> A leader in customer experience management and telecom
+                    software solutions.</li>
+            </ul>
+
+            <p>Our team’s combined expertise ensures that we deliver the most efficient and effective solutions tailored
+                to the needs of our clients. We are dedicated to improving network performance, enhancing customer
+                satisfaction, and driving business growth for our clients.</p>
+        </section>
+
+        <!-- R&D and Products Section -->
+        <section id="rd-products">
+            <h2>R & D and Products</h2>
+            <img src="./rnd.jpg" alt="Home Section Image" />
+            <p>At Credible Techno Consultants, we continuously invest in research and development to bring the latest
+                technology solutions to the telecom industry. Our R&D team collaborates with leading global technology
+                partners to stay ahead of the curve.</p>
+
+            <ul>
+                <li><strong>BPPL:</strong> Innovations in broadband performance monitoring and optimization tools.</li>
+                <li><strong>YSDPL:</strong> Specializing in fiber-to-the-home (FTTH) technologies and deployment models.
+                </li>
+                <li><strong>MNSPL:</strong> Providing solutions for high-speed data transmission and next-gen telecom
+                    equipment.</li>
+                <li><strong>VTL:</strong> Focused on software-driven solutions for telecom network management and
+                    automation.</li>
+                <li><strong>YSTPS:</strong> Developing advanced testing and monitoring systems for telecom operators.
+                </li>
+                <li><strong>Sterlite:</strong> Leaders in fibre optic technology with a focus on scalable network
+                    infrastructure.</li>
+                <li><strong>Huawei:</strong> Strategic partner in rolling out 5G networks and IoT solutions.</li>
+            </ul>
+
+            <p>Our products and services are designed to ensure that telecom operators can leverage cutting-edge
+                technology to deliver superior services to their customers. From network planning to full-scale
+                deployment, we provide the tools and expertise to help businesses succeed in a rapidly changing
+                landscape.</p>
+        </section>
+
+        <section id="clients-associates" style="display: none;">
+            <h2>Clients and Associates</h2>
+            <img src="./client.jpg" alt="Home Section Image" />
+            <ul>
+                <li>Fiber Vigil Solutions Pvt Ltd - Software & Remote Fiber Tracking System</li>
+                <li>Yash SiQure Technologies Pvt Ltd - FTTX Solution</li>
+                <li>MP Birla Telecom Academy - Network Training Centre</li>
+            </ul>
+
+            <h3>Khera Consulting</h3>
+            <p>"A private limited company incorporated on 30 Jan 2009 under the Indian Companies Act 1956. KTMT has
+                access to multiple world-class consulting management platforms."</p>
+
+            <h3>System Infra Solution Pvt. Ltd.</h3>
+            <p>The telecommunications industry in India is the fastest growing industry. System Infra Solutions Pvt. Ltd
+                has set up India’s 1st benchmark SMPS module repair center, with a success rate of close to 100%.</p>
+        </section>
+
+        <section id="about" style="display: none;">
+            <h2>About Us</h2>
+            <p>Credible Techno Consultants is a private limited company incorporated on 30 Jan 2009 under the Indian
+                Companies Act 1956. We have access to multiple world-class consulting management platforms.</p>
+        </section>
+
+
+        <!-- Contact Us Section -->
+        <section id="contact" style="display: none;">
+            <h2>Contact Us</h2>
+            <form id="contactForm" onsubmit="sendEmail(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="company">Company/Organisation:</label>
+                <input type="text" id="company" name="company" required>
+
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required>
+
+                <label for="interest">Area of Interest:</label>
+                <input type="text" id="interest" name="interest" required>
+
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" name="contact" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="website">Website (if any):</label>
+                <input type="url" id="website" name="website">
+
+                <label for="query">Query/Feedback:</label>
+                <textarea id="query" name="query" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+
+            <p id="status"></p> <!-- For displaying status messages -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Credible Techno Consultants. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
