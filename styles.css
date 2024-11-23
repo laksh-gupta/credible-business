@@ -1,6 +1,8 @@
 /* styles.css */
-html, body {
-    height: 100%; /* Ensure the body and HTML take full height */
+html,
+body {
+    height: 100%;
+    /* Ensure the body and HTML take full height */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -13,7 +15,8 @@ body {
 }
 
 header {
-    background-image: url('./header.jpg'); /* Add your image path here */
+    background-image: url('./header.jpg');
+    /* Add your image path here */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,7 +60,8 @@ nav ul li a:hover {
 }
 
 main {
-    flex: 1; /* Takes up available space to push footer to the bottom */
+    flex: 1;
+    /* Takes up available space to push footer to the bottom */
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
@@ -68,10 +72,12 @@ section {
     margin: 10px 0;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: none; /* Sections are hidden initially */
+    display: none;
+    /* Sections are hidden initially */
 }
 
-h2, h3 {
+h2,
+h3 {
     color: #333;
 }
 
@@ -85,11 +91,14 @@ table {
     margin: 20px 0;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 1px solid #ccc;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: left;
 }
@@ -126,8 +135,8 @@ img {
 
 img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
+    height: 100%;
+    object-fit: cover;
     border-radius: 5px;
 }
 
@@ -155,7 +164,8 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -163,7 +173,8 @@ input, textarea {
     transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #007BFF;
     outline: none;
 }
@@ -317,4 +328,101 @@ textarea {
     font-size: 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-radius: 5px;
+}
+
+.product-card,
+.product-features,
+.product-specs,
+.product-additional,
+.product-contact {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.product-card h3,
+.product-features h3,
+.product-specs h3,
+.product-additional h3,
+.product-contact h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-card ul,
+.product-features ul,
+.product-specs ul,
+.product-additional ul,
+.product-contact ul {
+    padding-left: 20px;
+}
+
+.product-card ul li,
+.product-features ul li,
+.product-specs ul li,
+.product-additional ul li,
+.product-contact ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.section-image {
+    max-width: 100%;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* Industries List in Home Section */
+.industries-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.industries-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 150px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.industries-list li:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Services Section */
+.Services-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.Services-list li {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.Services-list li strong {
+    color: #007BFF;
 }
